@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://registro.com" xmlns:tns="http://registro.com">
+    <xs:element name="registrarHorarioRequest">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="numeroControl" type="xs:string"/>
+                <xs:element name="horario" type="tns:materiaType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="registrarHorarioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="horarioValido" type="xs:boolean" />
+                <xs:element name="mensaje" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="materiaType">
+        <xs:sequence>
+            <xs:element name="nombreMateria" type="xs:string" />
+            <xs:element name="horaInicio" type="xs:string" />
+            <xs:element name="horaFin" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

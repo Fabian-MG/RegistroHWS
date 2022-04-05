@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://registro.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://registro.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://registro.com">
+			<xs:include schemaLocation="registro.xsd"/>
+		</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="registrarHorarioMessageResponse">
+    <wsdl:part name="parameter" element="tns:registrarHorarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="registrarHorarioMessageRequest">
+    <wsdl:part name="parameter" element="tns:registrarHorarioRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="registroPortType">
+    <wsdl:operation name="registrarHorarioOperation">
+      <wsdl:input message="tns:registrarHorarioMessageRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:registrarHorarioMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="registroBinding" type="tns:registroPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="registrarHorarioOperation">
+      <soap:operation soapAction="http://registro.com/registrarHorarioOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="registroService">
+    <wsdl:port name="registroPort" binding="tns:registroBinding">
+      <soap:address location="http://localhost:8080/axis2/services/registroService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

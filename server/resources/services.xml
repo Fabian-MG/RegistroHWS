@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.8.0  Built on : Aug 01, 2021 (07:27:19 HST) --><serviceGroup>
+    <service name="registroService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.registro.RegistroServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.registro.RegistroServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="registrarHorarioOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://registro.com">
+            <actionMapping>http://registro.com/registrarHorarioOperation</actionMapping>
+            <outputActionMapping>http://registro.com/registroPortType/registrarHorarioOperationResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
